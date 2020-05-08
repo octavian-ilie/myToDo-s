@@ -1,9 +1,23 @@
+/* ------------------------------------------------------------
+Storage
+------------------------------------------------------------ */
+
 let toDoElements = [];
+
+/* ------------------------------------------------------------
+Elements 
+------------------------------------------------------------ */
 
 const listOfElements = document.querySelector('.todo-list');
 const todoForm = document.querySelector('form');
-const eraseLink = document.querySelector('.erase-me');
+const eraseButton = document.querySelector('#proceed');
+const cancelButton = document.querySelector('#cancel');
 const errorMessage = document.querySelector('.error');
+const completeErase = document.querySelector('#completeErase');
+
+/* ------------------------------------------------------------
+Functions 
+------------------------------------------------------------ */
 
 function createElement(title, content) {
   const item = {
@@ -70,6 +84,27 @@ todoForm.addEventListener('submit', (event) => {
   }
 });
 
+function eraseMeConfirm() {
+  completeErase.style.display = "block";
+}
+
+function eraseMe() {
+  if (toDoElements.length !== 0) {
+    toDoElements.forEach((element) => {
+      const elements = document.querySelector(`[data-key='${element.id}']`);
+      if (elements) {
+        elements.remove();
+      }
+    });
+  }
+  toDoElements = [];
+  completeErase.style.display = "none";
+}
+
+/* ------------------------------------------------------------
+Event listeners
+------------------------------------------------------------ */
+
 listOfElements.addEventListener('click', (event) => {
   const elementClass = event.target.classList;
 
@@ -84,18 +119,10 @@ listOfElements.addEventListener('click', (event) => {
   }
 });
 
-function eraseMe() {
-  if (toDoElements.length !== 0) {
-    toDoElements.forEach((element) => {
-      const elements = document.querySelector(`[data-key='${element.id}']`);
-      if (elements) {
-        elements.remove();
-      }
-    });
-  }
-  toDoElements = [];
-}
-
-eraseLink.addEventListener('click', () => {
+eraseButton.addEventListener('click', () => {
   eraseMe();
+});
+
+cancelButton.addEventListener('click', () => {
+  completeErase.style.display = "none";
 });

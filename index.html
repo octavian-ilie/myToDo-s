@@ -10,12 +10,22 @@
 </head>
 
 <body>
+  <div id="completeErase" class="error-modal">
+    <div class="error-modal-content">
+      <p class="warning">Are you sure?</p>
+      <p class="warning-content">Erasing the list will <strong>permanently</strong> remove all entries. <br> This operation cannot be undone.</p>
+      <div class="warning-buttons-container">
+        <button id="cancel">Cancel</button>
+        <button id="proceed">Proceed</button>
+      </div>
+    </div>
+  </div>
   <header>
     <div class="main-title">
       <span class="orange-text">my</span>ToDo's
     </div>
     <div class="reset">
-      Need a fresh start? <a class="erase-me" onClick="eraseMe()">Erase me!</a>
+      Need a fresh start? <a class="erase-me" onClick="eraseMeConfirm()">Erase me!</a>
     </div>
   </header>
   <main>
