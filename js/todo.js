@@ -3,6 +3,7 @@ let toDoElements = [];
 const listOfElements = document.querySelector('.todo-list');
 const todoForm = document.querySelector('form');
 const eraseLink = document.querySelector('.erase-me');
+const errorMessage = document.querySelector('.error');
 
 function createElement(title, content) {
   const item = {
@@ -52,6 +53,7 @@ function deleteElement(key) {
 
 todoForm.addEventListener('submit', (event) => {
   event.preventDefault();
+  errorMessage.classList.add('hidden');
 
   const titleField = document.querySelector('.title-field');
   const contentField = document.querySelector('.content-field');
@@ -63,6 +65,8 @@ todoForm.addEventListener('submit', (event) => {
     titleField.value = '';
     contentField.value = '';
     titleField.focus();
+  } else {
+    errorMessage.classList.remove('hidden');
   }
 });
 
