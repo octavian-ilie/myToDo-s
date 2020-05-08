@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>&lt;/salt&gt; :: ToDo</title>
+  <link rel="stylesheet" type="text/css" href="./style/todo.css">
+  <script defer src="./js/todo.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="main-title">
+      <span class="orange-text">my</span>ToDo's
+    </div>
+    <div class="reset">
+      Need a fresh start? <a class="erase-me" onClick="eraseMe()">Erase me!</a>
+    </div>
+  </header>
+  <main>
+    <section class="intro">
+      <h2>
+        Add a new entry
+      </h2>
+    </section>
+    <form>
+      <input type="text" class="title-field" placeholder="Title">
+      <input type="text" class="content-field" placeholder="Description">
+      <button type="submit">Create element</button>
+    </form>
+    <br>
+    <ul class="todo-list">
+    </ul>
+  </main>
+</body>
+
+</html>

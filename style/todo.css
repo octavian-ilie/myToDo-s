@@ -1,0 +1,190 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #F5F5F5;
+}
+
+main {
+  width: 100%;
+  max-width: 60%;
+  min-width: 500px;
+  margin: 0 auto;
+  background-color: #fff;
+  color: #000;
+  height: auto;
+  margin-bottom: 26px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+header {
+  width: 60%;
+  min-width: 500px;
+  margin: 0 auto;
+  padding-top: 26px;
+  color: #000;
+  align-items: baseline;
+  position: relative;
+}
+
+.main-title {
+  margin-bottom: 10px;
+  font-size: 36pt;
+  font-weight: 800;
+}
+
+header .reset {
+  position: absolute;
+  float: right;
+  color: #000;
+  bottom: 0;
+  right: 0;
+  font-size: 9pt;
+  font-weight: 400;
+}
+
+header a {
+  text-decoration: none;
+  color: #FF7900;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+header a:hover {
+  color: #000;
+}
+
+header a:active {
+  color: #000;
+}
+
+.orange-text {
+  color: #FF7900;
+}
+
+.intro {
+  padding: 30px;
+}
+
+.todo-list {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.todo-element {
+  padding: 30px;
+  border-top: 0.5px solid #dbdbdb;
+  padding-bottom: 30px;
+  width: 100%;
+}
+
+.todo-element:hover {
+  background-color: #dbdbdb;
+}
+
+.todo-item span {
+  flex-grow: 1;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 22px;
+  padding-left: 20px;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.checked {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #bdbdbd;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  float: left;
+  margin-right: 26px;
+}
+
+.checked:hover {
+  border-color: #FF7900;
+}
+
+.checked::before {
+  content: '✓';
+  font-size: 20px;
+  display: none;
+}
+
+.done .checked::before {
+  display: inline;
+}
+
+.done {
+  color: #bdbdbd;
+}
+
+form {
+  width: 100%;
+  padding: 0 30px 12px 30px;
+}
+
+input[type="text"] {
+  outline: none;
+  width: 100%;
+  padding: 5px 0 5px 0;
+  color: #bdbdbd;
+  font-size: 10pt;
+  border: 0;
+  border-bottom: 2px solid #bdbdbd;
+  margin-bottom: 16px;
+  transition: .35s ease-in-out;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-bottom: 2px solid #000;
+  color: #000;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #FF7900;
+  font-size: 10pt;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  margin-top: 20px;
+}
+
+button[type="submit"]:hover {
+  background-color: #000;
+}
+
+.hidden {
+  display: none;
+}
+
+.delete {
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #000;
+  font-size: 10pt;
+  outline: none;
+  font-weight: 500;
+  margin-top: 30px;
+}
+
+.delete:hover {
+  background-color: #FF7900;
+}
