@@ -77,6 +77,8 @@ header a:active {
 .todo-list {
   list-style: none;
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .todo-element {
@@ -84,10 +86,13 @@ header a:active {
   border-top: 0.5px solid #dbdbdb;
   padding-bottom: 30px;
   width: 100%;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: row;
 }
 
 .todo-element:hover {
-  background-color: #dbdbdb;
+  background-color: #f4f4f4;
 }
 
 .todo-item span {
@@ -130,6 +135,12 @@ input[type="checkbox"] {
 
 .done {
   color: #bdbdbd;
+  background-color: #f4f4f4;
+  order: 1;
+}
+
+h3 {
+  margin: 4px 0 16px 0;
 }
 
 form {
@@ -137,7 +148,7 @@ form {
   padding: 0 30px 12px 30px;
 }
 
-input[type="text"] {
+input[type="text"], textarea {
   outline: none;
   width: 100%;
   padding: 5px 0 5px 0;
@@ -150,7 +161,12 @@ input[type="text"] {
   border-radius: 0;
 }
 
-input[type="text"]:focus {
+textarea {
+  max-width: 100%;
+  height: 100px;
+}
+
+input[type="text"]:focus, textarea:focus {
   outline: none;
   border-bottom: 2px solid #000;
   color: #000;
@@ -167,6 +183,7 @@ button[type="submit"] {
   outline: none;
   margin-top: 20px;
   border: none;
+  transition: all 0.2s ease;
 }
 
 button[type="submit"]:hover {
@@ -184,7 +201,6 @@ button[type="submit"]:hover {
   font-size: 10pt;
   outline: none;
   font-weight: 500;
-  margin-top: 30px;
   border: none;
 }
 
@@ -193,8 +209,21 @@ button[type="submit"]:hover {
   cursor: pointer;
 }
 
+.content-container {
+  display: flex;
+  flex-direction: column;
+  padding-right: 16px;
+  margin-bottom: 6px;
+  flex-grow: 1;
+}
+
+.delete-container {
+  align-self: flex-end;
+}
+
 .error {
   margin-top: 16px;
+  transition: all 0.3s ease-in-out;
 }
 
 .error-modal {

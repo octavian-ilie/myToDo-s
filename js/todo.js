@@ -30,15 +30,21 @@ function createElement(title, content) {
 
   listOfElements.insertAdjacentHTML('beforeend', `
     <li class="todo-element" data-key="${item.id}">
-      <input id="${item.id}" class="check" type="checkbox"/>
-      <label for="${item.id}" class="checked"></label>
-      <h3>${item.title}</h3>
-      <div class="todo-content">
-        <span>${item.content}</span>
+      <div data-key="${item.id}" class="checked-container">
+        <input id="${item.id}" class="check" type="checkbox"/>
+        <label for="${item.id}" class="checked"></label>
       </div>
-      <button class="delete hidden">
-        Remove
-      </button>
+      <div class="content-container">
+        <h3>${item.title}</h3>
+        <div class="todo-content">
+          <span>${item.content}</span>
+        </div>
+      </div>
+      <div data-key="${item.id}" class="delete-container">
+        <button class="delete hidden">
+          Remove
+        </button>
+      </div>
     </li>
   `);
 }
