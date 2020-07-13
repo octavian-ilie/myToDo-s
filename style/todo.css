@@ -163,7 +163,10 @@ input[type="text"], textarea {
 
 textarea {
   max-width: 100%;
+  min-width: 100%;
   height: 100px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 10pt;
 }
 
 input[type="text"]:focus, textarea:focus {
